@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import BillCard from 'components/BillCard'
 import { TransactionsAsyncActions } from 'store/actions/transactions'
 import { getMerchants } from 'store/selectors/transactions'
+import loadingGif from 'assets/loader.gif'
 
 const MarkedBills = () => {
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const MarkedBills = () => {
 
     return (
         <>
-            {isLoading && <div>Loading...</div>}
+            {isLoading && <img src={loadingGif} alt="Loading..."/>}
             {isLoaded && merchants.map((merchant: any) => <BillCard key={merchant.id} merchant={merchant}/>)}
         </>
     )

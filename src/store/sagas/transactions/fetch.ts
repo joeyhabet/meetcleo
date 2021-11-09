@@ -7,7 +7,7 @@ function* fetch(action: { payload: { isBill: boolean }, type: string}) {
   const { payload: { isBill } } = action
   
   try {
-    yield delay(1500)
+    yield delay(2500)
   // @ts-ignore
     const response = yield call(apiCall, `merchants?isBill=${isBill}`)
     yield put(SUCCESS(response))
